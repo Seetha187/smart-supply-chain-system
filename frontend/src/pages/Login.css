@@ -1,0 +1,546 @@
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(420px, 0.92fr);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(250, 204, 21, 0.2), transparent 28%),
+    radial-gradient(circle at 86% 78%, rgba(22, 163, 74, 0.16), transparent 30%),
+    #f8fafc;
+  color: #111827;
+}
+
+.login-hero,
+.login-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
+
+.login-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(22, 163, 74, 0.96), rgba(21, 128, 61, 0.92)),
+    #16a34a;
+  color: #ffffff;
+}
+
+.login-hero::before,
+.login-hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.login-hero::before {
+  width: 360px;
+  height: 360px;
+  top: -120px;
+  right: -90px;
+  border: 48px solid rgba(250, 204, 21, 0.18);
+  animation: login-float 8s ease-in-out infinite;
+}
+
+.login-hero::after {
+  width: 180px;
+  height: 180px;
+  left: -64px;
+  bottom: 10%;
+  background: rgba(220, 38, 38, 0.16);
+  animation: login-float 10s ease-in-out infinite reverse;
+}
+
+.login-hero__content {
+  position: relative;
+  z-index: 1;
+  width: min(620px, 100%);
+}
+
+.login-brand-mark {
+  width: 92px;
+  height: 58px;
+  position: relative;
+  margin-bottom: 36px;
+}
+
+.login-brand-mark::before,
+.login-brand-mark::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.login-brand-mark::before {
+  top: 18px;
+  transform: rotate(16deg);
+}
+
+.login-brand-mark::after {
+  bottom: 18px;
+  transform: rotate(-16deg);
+}
+
+.login-brand-mark__node {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.18);
+}
+
+.login-brand-mark__node--green {
+  left: 0;
+  top: 17px;
+  background: #ffffff;
+}
+
+.login-brand-mark__node--yellow {
+  left: 34px;
+  top: 0;
+  background: #facc15;
+}
+
+.login-brand-mark__node--red {
+  right: 0;
+  bottom: 0;
+  background: #dc2626;
+}
+
+.login-eyebrow,
+.login-card__eyebrow {
+  margin: 0 0 12px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.login-hero h1 {
+  max-width: 680px;
+  margin: 0;
+  color: #ffffff;
+  font-size: 3.35rem;
+  line-height: 1.04;
+  font-weight: 800;
+}
+
+.login-subtitle {
+  max-width: 560px;
+  margin: 22px 0 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1.14rem;
+  line-height: 1.7;
+}
+
+.logistics-graphic {
+  position: relative;
+  width: min(520px, 100%);
+  height: 260px;
+  margin-top: 54px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08)),
+    rgba(255, 255, 255, 0.08);
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.22);
+  backdrop-filter: blur(18px);
+  animation: login-rise 0.75s ease-out both;
+}
+
+.route-map {
+  position: absolute;
+  inset: 26px 34px;
+}
+
+.route-dot,
+.route-line {
+  position: absolute;
+  display: block;
+}
+
+.route-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.14);
+}
+
+.route-dot--warehouse {
+  left: 10%;
+  top: 56%;
+}
+
+.route-dot--hub {
+  left: 46%;
+  top: 28%;
+  background: #facc15;
+}
+
+.route-dot--delivery {
+  right: 10%;
+  bottom: 22%;
+  background: #dc2626;
+}
+
+.route-line {
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.85) 0 14px,
+    transparent 14px 24px
+  );
+  transform-origin: left center;
+}
+
+.route-line--one {
+  width: 178px;
+  left: 14%;
+  top: 53%;
+  transform: rotate(-25deg);
+}
+
+.route-line--two {
+  width: 188px;
+  left: 50%;
+  top: 34%;
+  transform: rotate(29deg);
+}
+
+.warehouse-icon,
+.truck-icon,
+.inventory-stack {
+  position: absolute;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.22);
+}
+
+.warehouse-icon {
+  left: 42px;
+  bottom: 34px;
+  width: 100px;
+  height: 74px;
+}
+
+.warehouse-icon::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: -28px;
+  width: 72px;
+  height: 52px;
+  background: #facc15;
+  clip-path: polygon(50% 0, 100% 56%, 100% 100%, 0 100%, 0 56%);
+}
+
+.warehouse-icon span {
+  position: absolute;
+  bottom: 12px;
+  width: 18px;
+  height: 28px;
+  border-radius: 5px;
+  background: #16a34a;
+}
+
+.warehouse-icon span:nth-child(1) {
+  left: 16px;
+}
+
+.warehouse-icon span:nth-child(2) {
+  left: 41px;
+}
+
+.warehouse-icon span:nth-child(3) {
+  right: 16px;
+}
+
+.truck-icon {
+  right: 42px;
+  bottom: 42px;
+  width: 138px;
+  height: 68px;
+  background: transparent;
+  box-shadow: none;
+  animation: truck-move 4.2s ease-in-out infinite;
+}
+
+.truck-body,
+.truck-cab {
+  position: absolute;
+  bottom: 18px;
+  background: #ffffff;
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.2);
+}
+
+.truck-body {
+  left: 0;
+  width: 86px;
+  height: 40px;
+  border-radius: 12px 8px 8px 12px;
+}
+
+.truck-cab {
+  right: 8px;
+  width: 46px;
+  height: 34px;
+  border-radius: 8px 14px 8px 6px;
+  background: #facc15;
+}
+
+.truck-wheel {
+  position: absolute;
+  bottom: 8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #111827;
+  border: 4px solid #ffffff;
+}
+
+.truck-wheel--one {
+  left: 20px;
+}
+
+.truck-wheel--two {
+  right: 20px;
+}
+
+.inventory-stack {
+  top: 42px;
+  right: 42px;
+  width: 118px;
+  height: 94px;
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: none;
+}
+
+.inventory-stack span {
+  position: absolute;
+  left: 18px;
+  width: 82px;
+  height: 20px;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.inventory-stack span:nth-child(1) {
+  top: 18px;
+}
+
+.inventory-stack span:nth-child(2) {
+  top: 40px;
+  background: #facc15;
+}
+
+.inventory-stack span:nth-child(3) {
+  top: 62px;
+  background: #dc2626;
+}
+
+.login-panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.92)),
+    #f8fafc;
+}
+
+.login-card {
+  width: min(440px, 100%);
+  padding: 36px;
+  border: 1px solid rgba(148, 163, 184, 0.26);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.14);
+  animation: login-rise 0.65s ease-out both;
+}
+
+.login-card__header {
+  margin-bottom: 30px;
+}
+
+.login-card__eyebrow {
+  color: #16a34a;
+}
+
+.login-card h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.login-card p {
+  margin: 12px 0 0;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.login-form {
+  display: grid;
+  gap: 18px;
+}
+
+.login-field {
+  display: grid;
+  gap: 8px;
+}
+
+.login-field label {
+  color: #334155;
+  font-size: 0.93rem;
+  font-weight: 700;
+}
+
+.login-field input {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  background: #ffffff;
+  color: #0f172a;
+  font: inherit;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.login-field input:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.14);
+  transform: translateY(-1px);
+}
+
+.login-error {
+  min-height: 22px;
+  color: #dc2626;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.login-button {
+  min-height: 52px;
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  box-shadow: 0 16px 30px rgba(22, 163, 74, 0.28);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.login-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 38px rgba(22, 163, 74, 0.34);
+}
+
+.login-button:disabled {
+  cursor: not-allowed;
+  filter: saturate(0.72);
+}
+
+@keyframes login-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes login-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(12px, -16px, 0);
+  }
+}
+
+@keyframes truck-move {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-12px);
+  }
+}
+
+@media (max-width: 980px) {
+  .login-page {
+    grid-template-columns: 1fr;
+  }
+
+  .login-hero,
+  .login-panel {
+    padding: 36px 22px;
+  }
+
+  .login-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .logistics-graphic {
+    height: 220px;
+    margin-top: 34px;
+  }
+}
+
+@media (max-width: 560px) {
+  .login-hero {
+    min-height: auto;
+  }
+
+  .login-hero h1 {
+    font-size: 2rem;
+  }
+
+  .login-subtitle {
+    font-size: 1rem;
+  }
+
+  .logistics-graphic {
+    height: 190px;
+    border-radius: 22px;
+  }
+
+  .inventory-stack {
+    display: none;
+  }
+
+  .warehouse-icon {
+    left: 24px;
+    transform: scale(0.86);
+    transform-origin: bottom left;
+  }
+
+  .truck-icon {
+    right: 18px;
+    transform: scale(0.82);
+    transform-origin: bottom right;
+  }
+
+  .login-card {
+    padding: 26px;
+    border-radius: 22px;
+  }
+}
